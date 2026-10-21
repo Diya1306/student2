@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+</head>
+<body>
+
+    <h1>Student Information Form</h1>
+
+    <form>
+        <label>Name:</label>
+        <input type="text" id="name" required>
+        <br><br>
+
+        <label>Roll Number:</label>
+        <input type="number" id="roll" required>
+        <br><br>
+
+        <label>Course:</label>
+        <input type="text" id="course" required>
+        <br><br>
+
+        <label>Age:</label>
+        <input type="number" id="age" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" required>
+        <br><br>
+
+        <button type="button" onclick="displayData()">
+            Submit
+        </button>
+
+        <button type="reset" onclick="clearData()">
+            Clear
+        </button>
+    </form>
+
+    <h2>Student Details</h2>
+    <p id="result"></p>
+
+    <script>
+        function displayData() {
+            let name = document.getElementById("name").value;
+            let roll = document.getElementById("roll").value;
+            let course = document.getElementById("course").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+
+            if (!name || !roll || !course || !age || !email) {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Name: " + name + "<br>" +
+                "Roll Number: " + roll + "<br>" +
+                "Course: " + course + "<br>" +
+                "Age: " + age + "<br>" +
+                "Email: " + email;
+        }
+
+        function clearData() {
+            document.getElementById("result").innerHTML = "";
+        }
+    </script>
+
+</body>
+</html>
